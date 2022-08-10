@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1053491678223",
+    "project_id": "user-viewer-36d09",
+    "storage_bucket": "user-viewer-36d09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053491678223:android:e2fdd0df34747aa812277a",
+        "android_client_info": {
+          "package_name": "com.krazypsp.user_view"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053491678223-ho4pabnp1s8ih4b5srh698j4dm5898rj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAmdY_1QcXT9FjBhHw0UYBSRWKBA7brzw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053491678223-ho4pabnp1s8ih4b5srh698j4dm5898rj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

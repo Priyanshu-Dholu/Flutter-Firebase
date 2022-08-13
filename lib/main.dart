@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:user_view/screens/wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'screens/auth.dart';
 
 Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,10 +17,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.green,
-        fontFamily: 'Quicksand',
+        primarySwatch: Colors.red,
+        fontFamily: 'Quicksand'
       ),
-      home: Wrapper(),
+      home: Auth(),
     );
   }
 }

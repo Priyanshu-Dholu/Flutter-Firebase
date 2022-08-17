@@ -1,29 +1,26 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:user_view/screens/MainPage.dart';
-import 'package:user_view/screens/auth.dart';
+import 'package:user_view/models/user.dart';
+import 'package:user_view/screens/authenticate/authenticate.dart';
+import 'package:user_view/screens/home/Home.dart';
+import 'package:provider/provider.dart';
 
-class MPage extends StatefulWidget {
-  const MPage({Key? key}) : super(key: key);
+class Wrapper extends StatefulWidget {
+  const Wrapper({Key? key}) : super(key: key);
 
   @override
-  State<MPage> createState() => _MPageState();
+  State<Wrapper> createState() => _WrapperState();
 }
 
-class _MPageState extends State<MPage> {
+class _WrapperState extends State<Wrapper> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: StreamBuilder<User?>(
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return MainPage();
-          } else {
-            return Auth();
-          }
-        }),
-      );
+    final user = Provider.of<MyUser?>(context);
+
+    // Returns Either Home Or Authentication
+    if (user != null) {
+      return Home();
+    } else {
+      return Authenticate();
+    }
   }
 }

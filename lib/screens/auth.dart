@@ -1,6 +1,8 @@
+// import 'dart:js';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:user_view/screens/MainPage.dart';
 
 
 class Auth extends StatefulWidget {
@@ -91,9 +93,6 @@ class _AuthState extends State<Auth> {
                     final email = _emailController.text;
                     final pass = _passController.text;
                     await authentication(operation: 2, email: email, pass: pass);
-                    setState(() {
-                      
-                    });
                   },
                 ),
               ),
@@ -119,7 +118,7 @@ class _AuthState extends State<Auth> {
     );
   }
 
-  Future<int> authentication({required int operation,required String email,required String pass}) async {
+  Future<Object> authentication({required int operation,required String email,required String pass}) async {
     if (operation == 1) {
       try {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: pass);
@@ -132,6 +131,8 @@ class _AuthState extends State<Auth> {
     else if (operation == 2) {
       try {
         await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: pass);
+        // Navigator.pushNamed(this.context, '/main');
+        print('Logged IN');
         return 1;
       } catch (e) {
         print(e.toString());
